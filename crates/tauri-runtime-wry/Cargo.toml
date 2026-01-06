@@ -74,4 +74,9 @@ objc-exception = []
 tracing = ["dep:tracing", "wry/tracing"]
 macos-proxy = ["wry/mac-proxy"]
 unstable = []
+
+# Git patches for Linux multiwebview positioning fix
+# See: https://github.com/tauri-apps/tauri/issues/10420
+[patch.crates-io]
+tao = { git = "https://github.com/Benjaminlooi/tao.git", branch = "multiwebview-fix" }
 common-controls-v6 = []

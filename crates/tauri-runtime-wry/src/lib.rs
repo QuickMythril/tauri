@@ -4981,8 +4981,8 @@ You may have it installed on another user account, but it is not available for t
     )))]
     WebviewKind::WindowChild => {
       // only way to account for menu bar height, and also works for multiwebviews :)
-      let vbox = window.default_vbox().unwrap();
-      webview_builder.build_gtk(vbox)
+      let fixed = window.fixed().unwrap();
+      webview_builder.build_gtk(fixed)
     }
     #[cfg(any(
       target_os = "windows",
@@ -5006,8 +5006,8 @@ You may have it installed on another user account, but it is not available for t
         target_os = "android"
       )))]
       let builder = {
-        let vbox = window.default_vbox().unwrap();
-        webview_builder.build_gtk(vbox)
+        let fixed = window.fixed().unwrap();
+        webview_builder.build_gtk(fixed)
       };
       builder
     }
