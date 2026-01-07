@@ -3548,7 +3548,7 @@ fn handle_user_message<T: UserEvent>(
               target_os = "openbsd"
             ))]
             let reparent_result = {
-              if let Some(container) = new_parent_window.default_vbox() {
+              if let Some(container) = new_parent_window.fixed() {
                 webview.inner.reparent(container)
               } else {
                 Err(wry::Error::MessageSender)
